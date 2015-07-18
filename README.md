@@ -33,12 +33,12 @@ is resolved with the parsed response or rejected if the request fails or if
 
 ### startAnimation(fn, duration)
 takes a function to be called with every animation frame and a duration.
-the function receives a `step` value which is a float between 0 and 1.0
+the function receives a `step` value which is a float between `0` and `1.0`
 representing the elapsed time of the animation. returns a promise which is
 resolved once the animation has completed.
 
 ### easeOut(step, start, change), easeIn(step, start, change)
-quadratic easing functions which take a `step` value (float between 0 and 1)
+quadratic easing functions which take a `step` value (float between `0` and `1.0`)
 and `start` and `change` values (which should be numbers). returns a value
 between `start` and `start + change`.
 
