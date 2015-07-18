@@ -1,4 +1,4 @@
-module.exports = {
+var utils = {
     uniqueId: function uniqueId() {
         var r = (Math.random() * 100000000) | 0;
         return Date.now().toString(32) + r.toString(32);
@@ -110,3 +110,7 @@ module.exports = {
         return Math.random() * (high - low) + low | 0;
     }
 };
+
+if (module !== undefined) {
+    module.exports = utils;
+}
