@@ -1,0 +1,22 @@
+{
+  "name": "utils",
+  "version": "1.0.0",
+  "description": "A utility belt of functions I use a lot.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/rolyatmax/utils.git"
+  },
+  "author": "Taylor Baldwin <taylorbaldwin@gmail.com> (https://tbaldw.in)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rolyatmax/utils/issues"
+  },
+  "homepage": "https://github.com/rolyatmax/utils#readme",
+  "devDependencies": {
+    "eslint": "0.24.1"
+  }
+}
