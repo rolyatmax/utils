@@ -108,6 +108,21 @@ var utils = {
             low = 0;
         }
         return Math.random() * (high - low) + low | 0;
+    },
+
+    // returns an array with ints between start and end (inclusive of start,
+    // not inclusive of end). also accepts a single int, treating it as the end
+    // and using 0 as start
+    range: function range(start, end) {
+        if (end === undefined) {
+            end = start;
+            start = 0;
+        }
+        var numbers = [];
+        while (start < end) {
+            numbers.push(start++);
+        }
+        return numbers;
     }
 };
 
