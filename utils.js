@@ -107,7 +107,7 @@ var utils = {
             high = low;
             low = 0;
         }
-        return Math.random() * (high - low) + low | 0;
+        return Math.random() * (high - low) + low;
     },
 
     // returns an array with ints between start and end (inclusive of start,
