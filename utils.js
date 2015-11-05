@@ -1,9 +1,11 @@
-export function uniqueId() {
+module.exports = {};
+
+module.exports.uniqueId = function uniqueId() {
     var r = (Math.random() * 100000000) | 0;
     return Date.now().toString(32) + r.toString(32);
-}
+};
 
-export function getCookie(name) {
+module.exports.getCookie = function getCookie(name) {
     var cookies = document.cookie.split(';');
     var nameEQ = name + '=';
     for (var i = 0; i < cookies.length; i++) {
@@ -16,32 +18,32 @@ export function getCookie(name) {
         }
     }
     return null;
-}
+};
 
-export function encodeQueryParams(paramsObj) {
+module.exports.encodeQueryParams = function encodeQueryParams(paramsObj) {
     var eUC = encodeURIComponent;
     return Object.keys(paramsObj).map(function(param) {
         return eUC(param) + '=' + eUC(paramsObj[param]);
     }).join('&');
-}
+};
 
-export function extend(target, source, overwrite) {
+module.exports.extend = function extend(target, source, overwrite) {
     for (var key in source)
         if (overwrite || !(key in target)) {
             target[key] = source[key];
         }
     return target;
-}
+};
 
-export function onReady(fn) {
+module.exports.onReady = function onReady(fn) {
     if (document.readyState !== 'loading') {
         fn();
     } else {
         document.addEventListener('DOMContentLoaded', fn);
     }
-}
+};
 
-export function getJSON(url) {
+module.exports.getJSON = function getJSON(url) {
     return new Promise(function(resolve, reject) {
         var request = new XMLHttpRequest();
         request.open('GET', url, true);
@@ -61,9 +63,9 @@ export function getJSON(url) {
         };
         request.send();
     });
-}
+};
 
-export function startAnimation(renderFn, duration) {
+module.exports.startAnimation = function startAnimation(renderFn, duration) {
     var startTime;
     return new Promise(function(resolve) {
         function _render(t) {
@@ -78,17 +80,17 @@ export function startAnimation(renderFn, duration) {
         }
         requestAnimationFrame(_render);
     });
-}
+};
 
-export function easeOut(step, start, change) {
+module.exports.easeOut = function easeOut(step, start, change) {
     return change * Math.pow(step, 2) + start;
-}
+};
 
-export function easeIn(step, start, change) {
+module.exports.easeIn = function easeIn(step, start, change) {
     return change * (1 - Math.pow(1 - step, 3)) + start;
-}
+};
 
-export function shuffle(list) {
+module.exports.shuffle = function shuffle(list) {
     list = list.slice();
     var shuffled = [];
     while (list.length) {
@@ -96,9 +98,9 @@ export function shuffle(list) {
         shuffled.push(list.splice(i, 1)[0]);
     }
     return shuffled;
-}
+};
 
-export function random(low, high) {
+module.exports.random = function random(low, high) {
     if (Array.isArray(low)) {
         return low[Math.random() * low.length | 0];
     }
@@ -107,12 +109,12 @@ export function random(low, high) {
         low = 0;
     }
     return Math.random() * (high - low) + low;
-}
+};
 
 // returns an array with ints between start and end (inclusive of start,
 // not inclusive of end). also accepts a single int, treating it as the end
 // and using 0 as start
-export function range(start, end) {
+module.exports.range = function range(start, end) {
     if (end === undefined) {
         end = start;
         start = 0;
@@ -122,4 +124,4 @@ export function range(start, end) {
         numbers.push(start++);
     }
     return numbers;
-}
+};
