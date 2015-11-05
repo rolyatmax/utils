@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/rolyatmax/utils#readme",
   "devDependencies": {
-    "eslint": "0.24.1"
+    "eslint": "1.8.0"
   }
 }
