@@ -102,13 +102,13 @@ module.exports.shuffle = function shuffle(list) {
 
 module.exports.random = function random(low, high) {
     if (Array.isArray(low)) {
-        return low[Math.random() * low.length | 0];
+        return low[random(low.length)];
     }
     if (high === undefined) {
         high = low;
         low = 0;
     }
-    return Math.random() * (high - low) + low;
+    return Math.random() * (high - low) + low | 0;
 };
 
 // returns an array with ints between start and end (inclusive of start,
